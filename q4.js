@@ -1,14 +1,32 @@
-db.Products.insertMany([
+db.employees.insertMany([
   {
-    name: "phone",
-    price:20000,
-    imageurl:"https://momunicipallaw.files.wordpress.com/2014/08/cell-phone.png",
+    name: "Brian C",
+    email: "brian@gmail.com",
+    department: "IT",
+    salary: 2256,
+    location: ["FL", "TX"],
+    date: Date(),
   },
   {
-    name: "laptop",
-    price:100000,
-    imageurl:"https://tse3.mm.bing.net/th?id=OIP.WCCq2nZelTZuFIRbJF7AuAHaEK&pid=Api&P=0&h=180",
+    name: "Chastity J",
+    email: "chastity@gmail.com",
+    department: "HR",
+    salary: 4556,
+    location: ["AZ", "TX"],
+    date: Date(),
   },
 ]);
 
-db.products.find();
+db.employees.find().skip(2);
+db.employees.find().limit(2);
+db.employees.findOne();
+db.employees.find().sort({ name: 1 }); //try -1
+db.employees.find({ department: "IT" });
+db.employees.find({}, { _id: 0, name: 1, email: 1 });
+db.employees.find({ department: "IT" }, { _id: 0, name: 1, email: 1 });
+db.employees.find(
+  { department: "IT" },
+  { _id: false, name: true, email: true }
+);
+db.employees.countDocuments()
+db.employees.find({},{dept:"$department"})

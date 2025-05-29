@@ -1,6 +1,19 @@
- db.createCollection("Products")
-{ ok: 1 }
-show collections
-emloyees
-employees
-Products
+db.Products.insertMany([
+  {
+    name: "phone",
+    price:20000,
+    imageurl:"https://momunicipallaw.files.wordpress.com/2014/08/cell-phone.png",
+  },
+  {
+    name: "laptop",
+    price:100000,
+    imageurl:"https://tse3.mm.bing.net/th?id=OIP.WCCq2nZelTZuFIRbJF7AuAHaEK&pid=Api&P=0&h=180",
+  },
+    {
+    name: "camera",
+    price:50000,
+    imageurl:"https://tse3.mm.bing.net/th?id=OIP.WCCq2nZelTZuFIRbJF7AuAHaEK&pid=Api&P=0&h=180",
+  },
+]);
+
+db.products.find();
